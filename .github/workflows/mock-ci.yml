@@ -11,4 +11,4 @@ jobs:
           sleep 60
           echo "Tests finished!"
           # Change this to 'exit 1' to demo a failure case
-          exit 0
+          exit 1
