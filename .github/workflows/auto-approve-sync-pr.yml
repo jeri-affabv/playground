@@ -1,10 +1,9 @@
 name: Auto Approval for Dev-Main Syncing PRs
 
 on:
-  push:
-    branches:
-      - main
-      - dev
+  pull_request:
+    branches: [main, dev]
+    types: [opened, synchronize, reopened]
 
 jobs:
   call-workflow:
