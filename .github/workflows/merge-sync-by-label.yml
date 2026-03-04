@@ -1,6 +1,6 @@
 name: Merge Sync PR By Label
 on:
-  pull_request:
+  pull_request_target:
     types: [labeled, synchronize]
   check_run:
     types: [completed]
