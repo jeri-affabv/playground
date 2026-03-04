@@ -1,8 +1,17 @@
-name: Sync Handler
+name: Merge Sync PR By Label
 on:
   pull_request:
-    types: [labeled]
+    types: [labeled, synchronize]
+  check_run:
+    types: [completed]
 
 jobs:
   call-sync:
+    # Ensure we only trigger for our specific label
+    if: |
+      (github.event.label.name == 'affable-merge-sync') || 
+      (contains(github.event.pull_request.labels.*.name, 'affable-merge-sync'))
+    permissions:
+      pull-requests: write
+      contents: write
     uses: jeri-affabv/playground-workflows/.github/workflows/merge-sync-by-label.yml@main
