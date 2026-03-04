@@ -1,0 +1,14 @@
+name: Mock CI Tests
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Dummy Tests
+        run: |
+          echo "Running tests..."
+          sleep 60
+          echo "Tests finished!"
+          # Change this to 'exit 1' to demo a failure case
+          exit 0
