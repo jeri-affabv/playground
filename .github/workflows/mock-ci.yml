@@ -8,7 +8,7 @@ jobs:
       - name: Run Dummy Tests
         run: |
           echo "Running tests..."
-          sleep 60
+          sleep 20
           echo "Tests finished!"
           # Change this to 'exit 1' to demo a failure case
           exit 0
